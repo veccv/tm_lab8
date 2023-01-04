@@ -40,16 +40,16 @@ if ($role != 'blocked') {
 }
 echo "Dostępne lekcje: <br><br>";
 
-$topics = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM topic"));
+$topics = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM lessons"));
 echo '<table class="table table-bordered table-striped">';
 echo '<thead>';
 echo '<tr>';
 if ($role == "admin") {
     echo '<th>Opcje</th>';
-    echo '<th>Temat</th>';
+    echo '<th>Temat lekcji</th>';
     echo '<th>Autor</th>';
 } else {
-    echo '<th>Temat</th>';
+    echo '<th>Temat lekcji</th>';
     echo '<th>Autor</th>';
 }
 echo '</tr>';
@@ -64,8 +64,8 @@ foreach ($topics as $topic) {
         echo '<td><a href="topic_view.php?id= ' . $topic[0] . '"> ' . $topic[1] . '</a></td>';
         echo '<td><a href="user_view.php?id=' . $topic[2] . '">' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM user WHERE id='$topic[2]'"))[1] . '</a></td>';
     } else {
-        echo '<td><a href="topic_view.php?id= ' . $topic[0] . '"> ' . $topic[1] . '</a></td>';
-        echo '<td><a href="user_view.php?id=' . $topic[2] . '">' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM user WHERE id='$topic[2]'"))[1] . '</a></td>';
+        echo '<td><a href="lesson_view.php?id= ' . $topic[0] . '"> ' . $topic[2] . '</a></td>';
+        echo '<td><a href="user_view.php?id=' . $topic[1] . '">' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users WHERE id='$topic[1]'"))[1] . '</a></td>';
     }
     echo '</tr>';
 }

@@ -1,4 +1,4 @@
-host=
-username=
-password=
-dbname=
+host=sql200.byetcluster.com
+username=epiz_32994942
+password=z4NFAPUJYqP1r
+dbname=epiz_32994942_z8
