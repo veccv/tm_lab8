@@ -34,7 +34,7 @@ $role = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users
 echo '<a href="index4.php">Powrót do wyboru lekcji</a><br><br>';
 
 $questions = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM questions WHERE test_id='$test_id' ORDER BY id asc"));
-echo '<form action="answer.php" method="post" enctype="multipart/form-data">';
+echo '<form action="test.php" method="post" enctype="multipart/form-data">';
 echo "<input type='hidden' name='test_id' value='$test_id' />";
 echo '<table class="table table-bordered table-striped">';
 echo '<thead>';
