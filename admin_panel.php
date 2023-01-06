@@ -112,13 +112,13 @@ foreach ($lessons as $lesson) {
     $author = mysqli_fetch_array(Database::getConnection()->query("SELECT login FROM users WHERE id='$lesson[1]'"))[0];
     echo '<tr>';
     echo '<td>';
-    echo '<a href="remove_exam.php?id=' . $lesson[0] . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
+    echo '<a href="remove_lesson.php?id=' . $lesson[0] . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
     echo '       ';
-    echo '<a href="block_test.php?id=' . $lesson[0] . '"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></a>';
+    echo '<a href="block_lesson.php?id=' . $lesson[0] . '"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></a>';
     echo '</td>';
     echo '<td>' . $lesson[2] . '</td>';
     echo '<td>' . $author . '</td>';
-    if ($lesson[4] == 'yes') {
+    if ($lesson[5] == 'yes') {
         echo '<td> Tak </td>';
     } else {
         echo '<td> Nie </td>';
