@@ -42,7 +42,11 @@ echo '<tbody>';
 foreach ($users as $usr) {
     if ($usr[3] != 'admin') {
         echo '<tr>';
-        echo '<td></td>';
+        echo '<td>';
+        echo '<a href="remove_user.php?id=' . $usr[0] . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
+        echo '       ';
+        echo '<a href="block_user.php?id=' . $usr[0] . '"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></a>';
+        echo '</td>';
         echo '<td>' . $usr[1] . '</td>';
         echo '<td>' . $usr[3] . '</td>';
         echo '</tr>';
