@@ -11,4 +11,4 @@ Database::getConnection()->query("INSERT INTO tests (creator_id, title, max_time
 
 $lesson_id = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM lessons ORDER BY id DESC LIMIT 1"))[0];
 Database::getConnection()->close();
-header('Location: test_view.php?id=' . $lesson_id);
+header('Location: index4.php');
