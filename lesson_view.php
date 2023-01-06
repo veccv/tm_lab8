@@ -39,6 +39,11 @@ if ($role == 'blocked') {
     exit();
 }
 
+if ($role == 'coach') {
+    echo 'Usuń lekcje <a href="remove_lesson.php?id=' . $topic_id . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a><br><br>';
+    echo 'Edytuj lekcje <a href="edit_lesson.php?id=' . $topic_id . '"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a><br><br>';
+}
+
 $blocked = mysqli_fetch_array(Database::getConnection()->query("SELECT blocked FROM lessons WHERE id='$topic_id'"))[0];
 if ($blocked == 'no') {
     $lesson_text = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM lessons WHERE id='$topic_id'"))[3];

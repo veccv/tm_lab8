@@ -101,9 +101,7 @@ if ($blocked == 'no') {
         echo '</tr>';
     }
     echo '<tr>';
-    if ($role == 'blocked') {
-        echo '<td colspan="2">Nie możesz dodawać ani usuwać swoich postów, jesteś zablokowany!</td>';
-    } else {
+    if ($role == 'coach') {
         echo '<td colspan="2"><a href="add_question.php?id=' . $test_id . '">Dodaj pytanie</a></td>';
     }
     echo '</tr>';
