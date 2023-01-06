@@ -34,6 +34,11 @@ $role = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users
 
 echo '<a href="index4.php">Powrót do wyboru lekcji</a><br><br>';
 
+if ($role == 'blocked') {
+    echo 'Jesteś zablokowany, nie możesz przeglądać tej lekcji!';
+    exit();
+}
+
 $blocked = mysqli_fetch_array(Database::getConnection()->query("SELECT blocked FROM lessons WHERE id='$topic_id'"))[0];
 if ($blocked == 'no') {
     $lesson_text = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM lessons WHERE id='$topic_id'"))[3];

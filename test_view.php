@@ -33,6 +33,11 @@ $test_id = $_GET['id'];
 $role = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users WHERE login='$user'"))[3];
 echo '<a href="index4.php">Powrót do wyboru lekcji</a><br><br>';
 
+if ($role == 'blocked') {
+    echo 'Jesteś zablokowany, nie możesz przeglądać tego testu!';
+    exit();
+}
+
 $blocked = mysqli_fetch_array(Database::getConnection()->query("SELECT blocked FROM tests WHERE id='$test_id'"))[0];
 if ($blocked == 'no') {
     $questions = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM questions WHERE test_id='$test_id' ORDER BY id asc"));
