@@ -31,6 +31,9 @@ $role = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users
 if ($role == "admin") {
     echo '<a href="admin_panel.php">Panel administratora</a>';
 }
+echo '<br>';
+echo '<br>';
+echo '<a href="employee_results.php">Wyniki egzaminów</a>'
 ?>
 <br>
 <br>

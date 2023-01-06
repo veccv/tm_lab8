@@ -139,6 +139,8 @@ $pdf->WriteHTML($user);
 $pdf->Ln();
 $pdf->WriteHTML(mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM tests WHERE id='$test_id'"))[2]);
 $pdf->Ln();
+$pdf->WriteHTML($pdf_date);
+$pdf->Ln();
 $pdf->Ln();
 
 foreach ($questions as $question) {
