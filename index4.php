@@ -54,7 +54,7 @@ echo '<tbody>';
 foreach ($topics as $topic) {
     echo '<tr>';
     echo '<td><a href="lesson_view.php?id=' . $topic[0] . '"> ' . $topic[2] . '</a></td>';
-    echo '<td><a href="user_view.php?id=' . $topic[1] . '">' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users WHERE id='$topic[1]'"))[1] . '</a></td>';
+    echo '<td>' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users WHERE id='$topic[1]'"))[1] . '</td>';
     echo '</tr>';
 }
 
@@ -79,7 +79,7 @@ echo '<tbody>';
 foreach ($tests as $topic) {
     echo '<tr>';
     echo '<td><a href="test_view.php?id=' . $topic[0] . '"> ' . $topic[2] . '</a></td>';
-    echo '<td><a href="user_view.php?id=' . $topic[1] . '">' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users WHERE id='$topic[1]'"))[1] . '</a></td>';
+    echo '<td>' . mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM users WHERE id='$topic[1]'"))[1] . '</td>';
     echo '</tr>';
 }
 
