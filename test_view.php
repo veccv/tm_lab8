@@ -54,6 +54,8 @@ if ($blocked == 'no') {
     foreach ($questions as $question) {
         echo '<tr>';
         echo '<td>';
+        echo 'Usuń pytanie <a href="remove_question.php?id=' . $question[0] . '&lid=' . $test_id . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a><br><br>';
+        echo 'Edytuj pytanie <a href="edit_lesson.php?id=' . $question[0] . '"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a><br><br>';
         echo '</td>';
         if (strlen($question[8]) > 0) {
             echo '<td>';
