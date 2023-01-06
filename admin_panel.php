@@ -52,7 +52,80 @@ foreach ($users as $usr) {
         echo '</tr>';
     }
 }
+echo '</tbody>';
+echo '</table>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
 
+$tests = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM tests ORDER BY id"));
+echo '<table class="table table-bordered table-striped">';
+echo '<thead>';
+echo '<tr>';
+echo '<th>Opcje</th>';
+echo '<th>Nazwa egzaminu</th>';
+echo '<th>Autor</th>';
+echo '<th>Maksymalny czas wykonywania (min)</th>';
+echo '<th>Zablokowany</th>';
+echo '</tr>';
+echo '</thead>';
+echo '<tbody>';
+foreach ($tests as $test) {
+    $author = mysqli_fetch_array(Database::getConnection()->query("SELECT login FROM users WHERE id='$test[1]'"))[0];
+    echo '<tr>';
+    echo '<td>';
+    echo '<a href="remove_exam.php?id=' . $test[0] . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
+    echo '       ';
+    echo '<a href="block_test.php?id=' . $test[0] . '"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></a>';
+    echo '</td>';
+    echo '<td>' . $test[2] . '</td>';
+    echo '<td>' . $author . '</td>';
+    echo '<td>' . $test[3] . '</td>';
+    if ($test[4] == 'yes') {
+        echo '<td> Tak </td>';
+    } else {
+        echo '<td> Nie </td>';
+    }
+    echo '</tr>';
+
+}
+echo '</tbody>';
+echo '</table>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+$lessons = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM lessons ORDER BY id"));
+echo '<table class="table table-bordered table-striped">';
+echo '<thead>';
+echo '<tr>';
+echo '<th>Opcje</th>';
+echo '<th>Nazwa lekcji</th>';
+echo '<th>Autor</th>';
+echo '<th>Zablokowany</th>';
+echo '</tr>';
+echo '</thead>';
+echo '<tbody>';
+foreach ($lessons as $lesson) {
+    $author = mysqli_fetch_array(Database::getConnection()->query("SELECT login FROM users WHERE id='$lesson[1]'"))[0];
+    echo '<tr>';
+    echo '<td>';
+    echo '<a href="remove_exam.php?id=' . $lesson[0] . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
+    echo '       ';
+    echo '<a href="block_test.php?id=' . $lesson[0] . '"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></a>';
+    echo '</td>';
+    echo '<td>' . $lesson[2] . '</td>';
+    echo '<td>' . $author . '</td>';
+    if ($lesson[4] == 'yes') {
+        echo '<td> Tak </td>';
+    } else {
+        echo '<td> Nie </td>';
+    }
+    echo '</tr>';
+
+}
 echo '</tbody>';
 echo '</table>';
 ?>
