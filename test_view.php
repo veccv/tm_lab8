@@ -38,6 +38,11 @@ if ($role == 'blocked') {
     exit();
 }
 
+if ($role == 'employee') {
+    $user_id = mysqli_fetch_array(Database::getConnection()->query("SELECT id FROM users WHERE login='$user'"))[0];
+    Database::getConnection()->query("INSERT INTO logs (employee_id, action, details) VALUES ('$user_id', 'test', '$test_id')");
+}
+
 $blocked = mysqli_fetch_array(Database::getConnection()->query("SELECT blocked FROM tests WHERE id='$test_id'"))[0];
 if ($blocked == 'no') {
     $questions = mysqli_fetch_all(Database::getConnection()->query("SELECT * FROM questions WHERE test_id='$test_id' ORDER BY id asc"));

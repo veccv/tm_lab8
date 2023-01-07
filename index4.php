@@ -33,7 +33,14 @@ if ($role == "admin") {
 }
 echo '<br>';
 echo '<br>';
-echo '<a href="employee_results.php">Wyniki egzaminów</a>'
+echo '<a href="employee_results.php">Wyniki egzaminów</a>';
+if ($role == 'coach') {
+    echo '<br>';
+    echo '<br>';
+    echo '<a href="logs.php">Logi pracowników</a>';
+    echo '<br>';
+    echo '<br>';
+}
 ?>
 <br>
 <br>

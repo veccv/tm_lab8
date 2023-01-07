@@ -44,6 +44,11 @@ if ($role == 'coach') {
     echo 'Edytuj lekcje <a href="edit_lesson.php?id=' . $topic_id . '"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a><br><br>';
 }
 
+if ($role == 'employee') {
+    $user_id = mysqli_fetch_array(Database::getConnection()->query("SELECT id FROM users WHERE login='$user'"))[0];
+    Database::getConnection()->query("INSERT INTO logs (employee_id, action, details) VALUES ('$user_id', 'lesson', '$topic_id')");
+}
+
 $blocked = mysqli_fetch_array(Database::getConnection()->query("SELECT blocked FROM lessons WHERE id='$topic_id'"))[0];
 if ($blocked == 'no') {
     $lesson_text = mysqli_fetch_array(Database::getConnection()->query("SELECT * FROM lessons WHERE id='$topic_id'"))[3];

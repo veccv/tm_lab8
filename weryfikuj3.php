@@ -31,6 +31,12 @@ if (!$rekord) //Jeśli brak, to nie ma użytkownika o podanym loginie
         $_SESSION['loggedin'] = true;
         $_SESSION['user'] = $user;
 
+        $user_role = mysqli_fetch_array(Database::getConnection()->query("SELECT role FROM users WHERE login='$user'"))[0];
+        $user_id = mysqli_fetch_array(Database::getConnection()->query("SELECT id FROM users WHERE login='$user'"))[0];
+        if ($user_role == 'employee') {
+            Database::getConnection()->query("INSERT INTO logs (employee_id, action) VALUES ('$user_id', 'login')");
+        }
+
         header('Location: index4.php');
     } else {
         Database::getConnection()->close();
