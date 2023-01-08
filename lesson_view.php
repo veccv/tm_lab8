@@ -23,7 +23,7 @@ Database::getConnection()->query("SET NAMES 'utf8'");
 <BODY style="padding: 15px">
 <a href="logout.php">Wyloguj się</a>
 <br>
-<a href="index.php">Powrót do menu głównego</a>
+<a href="index4.php">Powrót</a>
 <br>
 <br>
 <br>
@@ -48,6 +48,18 @@ if ($role == 'employee') {
     $user_id = mysqli_fetch_array(Database::getConnection()->query("SELECT id FROM users WHERE login='$user'"))[0];
     Database::getConnection()->query("INSERT INTO logs (employee_id, action, details) VALUES ('$user_id', 'lesson', '$topic_id')");
 }
+echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891998604464850"
+     crossorigin="anonymous"></script>
+<!-- Test -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9891998604464850"
+     data-ad-slot="3866609730"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>';
 
 $blocked = mysqli_fetch_array(Database::getConnection()->query("SELECT blocked FROM lessons WHERE id='$topic_id'"))[0];
 if ($blocked == 'no') {
@@ -65,7 +77,10 @@ if ($blocked == 'no') {
     echo '</thead>';
     echo '<tbody>';
     echo '<tr>';
-    echo '<td>Autor lekcji: ' . $lesson_author_name . '</td>';
+    echo '<td>Autor lekcji: ' . $lesson_author_name;
+
+
+    echo '</td>';
     echo '<td>' . $lesson_text . '<br><br>';
 
     if (strlen($lesson_file) > 0) {

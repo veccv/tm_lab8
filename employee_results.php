@@ -23,7 +23,7 @@ Database::getConnection()->query("SET NAMES 'utf8'");
 <BODY style="padding: 15px">
 <a href="logout.php">Wyloguj się</a>
 <br>
-<a href="index.php">Powrót do menu głównego</a>
+<a href="index4.php">Powrót</a>
 <br>
 <br>
 <?php

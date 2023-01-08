@@ -23,7 +23,7 @@ Database::getConnection()->query("SET NAMES 'utf8'");
 <BODY style="padding: 15px">
 <a href="logout.php">Wyloguj się</a>
 <br>
-<a href="index.php">Powrót do menu głównego</a>
+<a href="index4.php">Powrót</a>
 <br>
 <br>
 <br>
@@ -36,6 +36,10 @@ echo '<a href="index4.php">Powrót do wyboru lekcji</a><br><br>';
 if ($role == 'blocked') {
     echo 'Jesteś zablokowany, nie możesz przeglądać tego testu!';
     exit();
+}
+
+if ($role == 'coach') {
+    echo 'Usuń test <a href="remove_exam.php?id=' . $test_id . '"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a><br><br>';
 }
 
 if ($role == 'employee') {
