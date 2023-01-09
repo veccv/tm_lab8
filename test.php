@@ -144,7 +144,10 @@ $pdf->Ln();
 $pdf->Ln();
 
 foreach ($questions as $question) {
-    $pdf->WriteHTML($question[2]);
+    $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+    $pdf->SetFont('DejaVu','',14);
+    $text = $question[2];
+    $pdf->WriteHTML($text);
     $pdf->Ln();
     $user_answers = [];
     if(isset($_POST["wybory_" . $question[0]])) {
@@ -156,7 +159,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -164,7 +167,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -183,7 +186,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -191,7 +194,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -210,7 +213,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -218,7 +221,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -237,7 +240,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -245,7 +248,7 @@ foreach ($questions as $question) {
             $pdf->SetFont('ZapfDingbats','',11);
             $pdf->SetTextColor(0, 0, 0);
             $pdf->WriteHTML(chr(53));
-            $pdf->SetFont('Arial','B',11);
+            $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
             $pdf->WriteHTML(' ' . $question[3]);
             $pdf->Ln();
@@ -254,7 +257,7 @@ foreach ($questions as $question) {
         $pdf->SetFont('ZapfDingbats','',11);
         $pdf->SetTextColor(0, 0, 0);
         $pdf->WriteHTML(chr(111));
-        $pdf->SetFont('Arial','',11);
+        $pdf->SetFont('DejaVu','',11);
         $pdf->WriteHTML(' ' . $question[6]);
         $pdf->Ln();
     }
