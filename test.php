@@ -188,7 +188,7 @@ foreach ($questions as $question) {
             $pdf->WriteHTML(chr(53));
             $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
-            $pdf->WriteHTML(' ' . $question[3]);
+            $pdf->WriteHTML(' ' . $question[4]);
             $pdf->Ln();
         } else {
             $pdf->SetFont('ZapfDingbats','',11);
@@ -196,7 +196,7 @@ foreach ($questions as $question) {
             $pdf->WriteHTML(chr(53));
             $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
-            $pdf->WriteHTML(' ' . $question[3]);
+            $pdf->WriteHTML(' ' . $question[4]);
             $pdf->Ln();
         }
     } else {
@@ -215,7 +215,7 @@ foreach ($questions as $question) {
             $pdf->WriteHTML(chr(53));
             $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
-            $pdf->WriteHTML(' ' . $question[3]);
+            $pdf->WriteHTML(' ' . $question[5]);
             $pdf->Ln();
         } else {
             $pdf->SetFont('ZapfDingbats','',11);
@@ -223,7 +223,7 @@ foreach ($questions as $question) {
             $pdf->WriteHTML(chr(53));
             $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
-            $pdf->WriteHTML(' ' . $question[3]);
+            $pdf->WriteHTML(' ' . $question[5]);
             $pdf->Ln();
         }
     } else {
@@ -242,7 +242,7 @@ foreach ($questions as $question) {
             $pdf->WriteHTML(chr(53));
             $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(0, 255, 0);
-            $pdf->WriteHTML(' ' . $question[3]);
+            $pdf->WriteHTML(' ' . $question[6]);
             $pdf->Ln();
         } else {
             $pdf->SetFont('ZapfDingbats','',11);
@@ -250,7 +250,7 @@ foreach ($questions as $question) {
             $pdf->WriteHTML(chr(53));
             $pdf->SetFont('DejaVu','',11);
             $pdf->SetTextColor(255, 0, 0);
-            $pdf->WriteHTML(' ' . $question[3]);
+            $pdf->WriteHTML(' ' . $question[6]);
             $pdf->Ln();
         }
     } else {
