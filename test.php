@@ -176,7 +176,7 @@ foreach ($questions as $question) {
         $pdf->SetFont('ZapfDingbats','',11);
         $pdf->SetTextColor(0, 0, 0);
         $pdf->WriteHTML(chr(111));
-        $pdf->SetFont('Arial','',11);
+        $pdf->SetFont('DejaVu','',11);
         $pdf->WriteHTML(' ' . $question[3]);
         $pdf->Ln();
     }
@@ -203,7 +203,7 @@ foreach ($questions as $question) {
         $pdf->SetFont('ZapfDingbats','',11);
         $pdf->SetTextColor(0, 0, 0);
         $pdf->WriteHTML(chr(111));
-        $pdf->SetFont('Arial','',11);
+        $pdf->SetFont('DejaVu','',11);
         $pdf->WriteHTML(' ' . $question[4]);
         $pdf->Ln();
     }
@@ -230,7 +230,7 @@ foreach ($questions as $question) {
         $pdf->SetFont('ZapfDingbats','',11);
         $pdf->SetTextColor(0, 0, 0);
         $pdf->WriteHTML(chr(111));
-        $pdf->SetFont('Arial','',11);
+        $pdf->SetFont('DejaVu','',11);
         $pdf->WriteHTML(' ' . $question[5]);
         $pdf->Ln();
     }
